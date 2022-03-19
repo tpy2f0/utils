@@ -1,3 +1,4 @@
+`touch /root/dotfile/filebrowser/filebrowser.db`
 ```
 docker run -d \
     --name filebrowser \
