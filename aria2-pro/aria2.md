@@ -1,5 +1,6 @@
+## aria-pro
 ```
-sudo docker run -d \
+docker run -d \
     --name aria2-pro \
     --restart unless-stopped \
     --log-opt max-size=1m \
@@ -13,3 +14,13 @@ sudo docker run -d \
     -v $PWD/aria2/aria2-downloads:/downloads \
     p3terx/aria2-pro
 ```
+## ariang
+```
+docker run -d \
+    --name ariang \
+    --log-opt max-size=1m \
+    --restart unless-stopped \
+    -p 6880:6880 \
+    p3terx/ariang
+```
+[aria2-pro](https://p3terx.com/archives/docker-aria2-pro.html)
