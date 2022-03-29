@@ -1,9 +1,9 @@
-`touch /$PWD/dotfiles/filebrowser/filebrowser.db`
+`touch /$PWD/config/filebrowser/filebrowser.db`
 ```
 docker run -d \
     --name filebrowser \
     -v /root:/srv \
-    -v /$PWD/dotfiles/filebrowser/filebrowser.db:/database.db \
+    -v /$PWD/config/filebrowser/filebrowser.db:/database.db \
     --user $(id -u):$(id -g) \
     -p 8080:80 \
     --restart=always \
