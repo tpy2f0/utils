@@ -1,6 +1,7 @@
 ##
 ```
-ssh root@43.154.164.174
+ssh root@45.76.214.195
+9u)HP{{+)_q=GS1Q
 ```
 
 ## Get this image
@@ -65,6 +66,14 @@ docker run --network host --name naiveproxy -v /etc/naiveproxy:/etc/naiveproxy -
 ```
 sudo docker run --network host --name naiveproxy-client -v /etc/naiveproxy:/etc/naiveproxy --restart=always -d pocat/naiveproxy:client
 ```
+## or use config files
+```
+docker run --network host --name naiveproxy -v ~/config/naiveproxy:/etc/naiveproxy -v /var/www/html:/var/www/html -v /var/log/caddy:/var/log/caddy -e PATH=/etc/naiveproxy/Caddyfile --restart=always -d pocat/naiveproxy
+```
+```
+sudo docker run --network host --name naiveproxy-client -v ~/config/naiveproxy:/etc/naiveproxy --restart=always -d pocat/naiveproxy:client
+```
+
 ## client
 ```
 {
