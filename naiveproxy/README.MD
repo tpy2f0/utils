@@ -112,6 +112,7 @@ C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
 
 ## linux
 git clone https://github.com/kpzhao/config.git 
+mkdir -p /etc/naiveproxy
 cp ~/config/naiveproxy/naiveproxy /usr/bin/naiveproxy
 cp ~/config/naiveproxy/config.json /etc/naiveproxy/config.json      
 创建`/usr/lib/systemd/system/naiveproxy.service`
