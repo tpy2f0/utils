@@ -28,4 +28,3 @@ route {
       root /var/www/html
   }
 }
-EOF
