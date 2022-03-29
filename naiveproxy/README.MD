@@ -109,3 +109,22 @@ ws.run "naive.exe", vbhide
 以Win10为例，放到：
 
 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
+
+## linux
+git clone 
+cp ~/config/naiveproxy/naiveproxy /usr/bin/naiveproxy
+cp ~/config/naiveproxy/config.json /etc/naiveproxy/config.json      
+创建`/usr/lib/systemd/system/naiveproxy.service`
+```
+[Unit]
+Description=naiveproxy Service
+After=network-online.target
+
+[Service]
+Type=simple
+User=nobody
+ExecStart=/usr/bin/naiveproxy /etc/naiveproxy/config.json
+
+[Install]
+WantedBy=multi-user.target
+```
