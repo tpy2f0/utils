@@ -13,6 +13,7 @@ git clone https://github.com/stilleshan/nginx.git
 docker run -d --name=nginx --restart=always \
     --network host \
     -v ~/config/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
+    -v ~/config/nginx/conf/default.conf:/etc/nginx/default.conf \
     -v ~/config/nginx/vhost:/etc/nginx/conf.d/vhost \
     -v ~/config/nginx/ssl:/etc/nginx/ssl \
     -v ~/config/nginx/html:/usr/share/nginx/html \
