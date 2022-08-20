@@ -5,7 +5,7 @@ ssh root@43.154.164.174
 
 ## Get this image
 ```
-docker pull pocat/naiveproxy
+docker pull kpzhao/naiveproxy
 ```
 
 ## Modify the configuration
@@ -37,7 +37,7 @@ EOF
 #
 ## or use config files
 ```
-docker run --network host --name naiveproxy -v ~/config/naiveproxy:/etc/naiveproxy -v /var/www/html:/var/www/html -v /var/log/caddy:/var/log/caddy -e PATH=/etc/naiveproxy/Caddyfile --restart=always -d pocat/naiveproxy
+docker run --network host --name naiveproxy -v ~/utiles/naiveproxy:/etc/naiveproxy -v /var/www/html:/var/www/html -v /var/log/caddy:/var/log/caddy -e PATH=/etc/naiveproxy/Caddyfile --restart=always -d kpzhao/naiveproxy
 ```
 ## client
 ```
