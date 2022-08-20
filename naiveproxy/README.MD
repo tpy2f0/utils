@@ -1,79 +1,44 @@
 ##
 ```
 ssh root@43.154.164.174
-9u)HP{{+)_q=GS1Q
 ```
 
 ## Get this image
 ```
-docker pull pocat/naiveproxy && docker pull pocat/naiveproxy:client
+docker pull pocat/naiveproxy
 ```
-## create a directory
-```
-mkdir -p /etc/naiveproxy
-```
-## copy CA 
-```
-git clone https://github.com/kpzhao/fqqq.git
-cp -r ~/fqqq/CA /etc/naiveproxy/CA
-```
+
 ## Modify the configuration
 ```
 cat > /etc/naiveproxy/Caddyfile <<EOF
 {
-  admin off
-  log {
-      output file /var/log/caddy/access.log
-      level INFO
-  }
-  servers :443 {
-      protocol {
-          experimental_http3
-      }
+  servers {
+    protocol {
+      experimental_http3
+    }
   }
 }
-
-:80 {
-  redir https://{host}{uri} permanent
-}
-
 :443, kpzhao.xyz
 tls kaipengzhao@gmail.com
 route {
   forward_proxy {
-      basic_auth kpzhao 123456
-      hide_ip
-      hide_via
-      probe_resistance rP7uSWkJpZzfg5g2Qr.com  #Modify to a secret domain, like password
+    basic_auth kpzhao zhao
+    hide_ip
+    hide_via
+    probe_resistance
   }
   file_server {
-      root /var/www/html
+    root /var/www/html
   }
 }
 EOF
 ```
-```
-cat > /etc/naiveproxy/config.json <<EOF
-{
-  "listen": "socks://127.0.0.1:1080"
-}
-EOF
-```
-## Start the service
-```
-docker run --network host --name naiveproxy -v /etc/naiveproxy:/etc/naiveproxy -v /var/www/html:/var/www/html -v /var/log/caddy:/var/log/caddy -e PATH=/etc/naiveproxy/Caddyfile --restart=always -d pocat/naiveproxy
-```
-```
-sudo docker run --network host --name naiveproxy-client -v /etc/naiveproxy:/etc/naiveproxy --restart=always -d pocat/naiveproxy:client
-```
+
+#
 ## or use config files
 ```
 docker run --network host --name naiveproxy -v ~/config/naiveproxy:/etc/naiveproxy -v /var/www/html:/var/www/html -v /var/log/caddy:/var/log/caddy -e PATH=/etc/naiveproxy/Caddyfile --restart=always -d pocat/naiveproxy
 ```
-```
-sudo docker run --network host --name naiveproxy-client -v ~/config/naiveproxy:/etc/naiveproxy --restart=always -d pocat/naiveproxy:client
-```
-
 ## client
 ```
 {
