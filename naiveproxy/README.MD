@@ -21,15 +21,15 @@ cat > /etc/naiveproxy/Caddyfile <<EOF
 :443, kpzhao.xyz
 tls kaipengzhao@gmail.com
 route {
-  forward_proxy {
-    basic_auth kpzhao zhao
-    hide_ip
-    hide_via
-    probe_resistance
-  }
-  file_server {
-    root /var/www/html
-  }
+        forward_proxy {
+                basic_auth kpzhao 123456
+                hide_ip
+                hide_via
+                probe_resistance
+        }
+        file_server {
+                root /var/www/html
+        }
 }
 EOF
 ```
