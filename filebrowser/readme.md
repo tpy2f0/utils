@@ -1,11 +1,11 @@
 `touch /$PWD/config/filebrowser/filebrowser.db`
+
 ```
-docker run -d \
-    --name filebrowser \
+docker run \
     -v /root:/srv \
     -v /$PWD/utiles/filebrowser/filebrowser.db:/database.db \
-    --user $(id -u):$(id -g) \
+    -e PUID=$(id -u) \
+    -e PGID=$(id -g) \
     -p 8080:80 \
-    --restart=always \
-    filebrowser/filebrowser
+    filebrowser/filebrowser:s6
 ```
