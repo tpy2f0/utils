@@ -1,2 +1,2 @@
-# utiles
-my utiles config
+# utils
+my utils config
