@@ -1,4 +1,4 @@
-:443, kpzhao.xyz
+:443, archlinux.icu
 tls kaipengzhao@gmail.com
 route {
         forward_proxy {
