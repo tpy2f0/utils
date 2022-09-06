@@ -12,11 +12,11 @@ git clone https://github.com/stilleshan/nginx.git
 ```shell
 docker run -d --name=nginx --restart=always \
     --network host \
-    -v ~/config/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
-    -v ~/config/nginx/conf/default.conf:/etc/nginx/conf.d/default.conf \
-    -v ~/config/nginx/vhost:/etc/nginx/conf.d/vhost \
-    -v ~/config/nginx/ssl:/etc/nginx/ssl \
-    -v ~/config/nginx/html:/usr/share/nginx/html \
+    -v ~/utils/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
+    -v ~/utils/nginx/conf/default.conf:/etc/nginx/conf.d/default.conf \
+    -v ~/utils/nginx/vhost:/etc/nginx/conf.d/vhost \
+    -v ~/utils/nginx/ssl:/etc/nginx/ssl \
+    -v ~/utils/nginx/html:/usr/share/nginx/html \
     -v /root:/root \
     nginx
 ```
