@@ -4,8 +4,7 @@
 docker run \
     -v /root:/srv \
     -v /$PWD/utils/filebrowser/filebrowser.db:/database.db \
-    -e PUID=$(id -u) \
-    -e PGID=$(id -g) \
+    -u $(id -u):$(id -g) \
     -p 8080:80 \
     filebrowser/filebrowser:s6
 ```
