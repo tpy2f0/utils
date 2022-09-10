@@ -1,4 +1,4 @@
-`touch /$PWD/config/filebrowser/filebrowser.db`
+`touch /$PWD/utils/filebrowser/filebrowser.db`
 
 ```
 docker run \
