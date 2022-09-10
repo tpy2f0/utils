@@ -3,7 +3,7 @@
 ```
 docker run \
     -v /root:/srv \
-    -v /$PWD/utiles/filebrowser/filebrowser.db:/database.db \
+    -v /$PWD/utils/filebrowser/filebrowser.db:/database.db \
     -e PUID=$(id -u) \
     -e PGID=$(id -g) \
     -p 8080:80 \
