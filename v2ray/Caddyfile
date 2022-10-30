@@ -1,0 +1,18 @@
+archlinux.icu
+{
+    tls samber@gmail.com {
+        on_demand
+    }
+    encode gzip
+#    多用户 多path
+#    import Caddyfile.multiuser
+    handle_path /53e075c88dd0 {
+        reverse_proxy localhost:54321
+    }
+    handle {
+        reverse_proxy https://www.1ting.com {
+            trusted_proxies 0.0.0.0/0
+            header_up Host {upstream_hostport}
+        }
+    }
+}
