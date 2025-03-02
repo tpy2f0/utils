@@ -10,8 +10,8 @@ podman run -d \
     -e RPC_SECRET=123456 \
     -e RPC_PORT=6800 \
     -e LISTEN_PORT=6888 \
-    -v $PWD/aria2:/config \
-    -v $PWD/aria2/aria2-downloads:/downloads \
+    -v $PWD/aria2/config:/config \
+    -v $PWD/aria2/downloads:/downloads \
     p3terx/aria2-pro
 ```
 ## ariang
